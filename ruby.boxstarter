@@ -2,6 +2,6 @@ cinst ruby -version 1.9.3.54500
 cinst ruby.devkit.ruby193
 cinst pik
 
-Start-Process "gem" -ArgumentList "install --platform=ruby nokigiri" -Wait
+Start-Process "gem" -ArgumentList "install --platform=ruby nokogiri" -Wait
 Start-Process "gem" -ArgumentList "install --platform=ruby watir" -Wait
-Start-Process "gem" -ArgumentList "install --platform=ruby watir-web-driver" -Wait
+Start-Process "gem" -ArgumentList "install --platform=ruby watir-webdriver" -Wait
