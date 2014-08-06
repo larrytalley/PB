@@ -2,7 +2,7 @@ Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFile
 Enable-RemoteDesktop
 
 cinst ruby -version 1.9.3.54500
-cinst ruby.devkit.193
+cinst ruby.devkit.ruby193
 cinst pik
 cinst puppet
 cinst putty
