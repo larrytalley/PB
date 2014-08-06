@@ -2,6 +2,6 @@ cinst ruby -version 1.9.3.54500
 cinst ruby.devkit.ruby193
 cinst pik
 cinst putty
-cinst 7zip
+cinst 7zip.install
 cinst mingw
 cinst mingw-get
