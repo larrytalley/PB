@@ -2,3 +2,4 @@ cinst gow
 cinst Devbox-RapidEE
 cinst conemu
 cinst notepadplusplus.install
+cinst git.install
