@@ -5,5 +5,3 @@ cinst putty
 cinst 7zip
 cinst mingw
 cinst mingw-get
-cinst rsync
-
