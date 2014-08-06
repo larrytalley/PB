@@ -1,2 +1,0 @@
-$principal = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
-echo $principal
