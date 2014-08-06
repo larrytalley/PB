@@ -3,5 +3,6 @@ cinst ruby.devkit.ruby193
 cinst pik
 cinst putty
 cinst 7zip.install
+cinst 7zip.commandline
 cinst mingw
 cinst mingw-get
