@@ -1,0 +1,8 @@
+$principal = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
+$key = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\UserChoice",[Microsoft.Win32.RegistryKeyPermissionCheck]::ReadWriteSubTree,[System.Security.AccessControl.RegistryRights]::ChangePermissions)
+$acl = $key.GetAccessControl()
+$right = "SetValue"
+$denyrule = New-Object System.Security.AccessControl.RegistryAccessRule($principal,$right,"DENY")
+$ret = $acl.RemoveAccessRule($denyrule)
+$ret = $key.SetAccessControl($acl)
+Set-ItemProperty -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\UserChoice -Name ProgId -Value Applications\notepad++.exe
