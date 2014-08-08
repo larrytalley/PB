@@ -7,3 +7,4 @@ cinst 7zip.commandline
 cinst mingw
 cinst mingw-get
 cinst OpenSSH
+cinst carbon
