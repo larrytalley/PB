@@ -1,2 +1,2 @@
 Write-Verbose "$(Get-Date -format g) Establishing PATH"
-setx PATH "$env:path;C:\bin" -m
+setx PATH "$env:path;C:\bin;C:\opt\eclipse;C:\opt\eclipse\shared-libs\bin" -m
