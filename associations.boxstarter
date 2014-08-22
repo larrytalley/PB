@@ -1,3 +1,4 @@
+Write-Verbose "Establishing file extensions for Notepad++"
 $principal = [System.Security.Principal.WindowsIdentity]::GetCurrent().Name
 $key = [Microsoft.Win32.Registry]::CurrentUser.OpenSubKey("Software\Microsoft\Windows\CurrentVersion\Explorer\FileExts\.txt\UserChoice",[Microsoft.Win32.RegistryKeyPermissionCheck]::ReadWriteSubTree,[System.Security.AccessControl.RegistryRights]::ChangePermissions)
 $acl = $key.GetAccessControl()
