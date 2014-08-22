@@ -87,7 +87,7 @@ function Set-LHSTokenPrivilege
 
 Param(
 
-    [Parameter(Position=0,Mandatory=$True,ValueFromPipeline=$False,HelpMessage='An Token Privilege.')]
+    [Parameter(Position=0,Mandatory=$True,ValueFromPipeline=$False)]
     [ValidateSet(
         "SeAssignPrimaryTokenPrivilege", "SeAuditPrivilege", "SeBackupPrivilege",
         "SeChangeNotifyPrivilege", "SeCreateGlobalPrivilege", "SeCreatePagefilePrivilege",
@@ -192,10 +192,10 @@ function Set-Ownership
 
 Param(
 
-    [Parameter(Position=0,Mandatory=$True,ValueFromPipeline=$False,HelpMessage='User to receive ownership.')]
+    [Parameter(Position=0,Mandatory=$True,ValueFromPipeline=$False)]
     [String]$UserToReceiveOwnership,
 
-    [Parameter(Position=1)Mandatory=$True,ValueFromPipeline=$False,HelpMessage='Object to own.')]
+    [Parameter(Position=1)Mandatory=$True,ValueFromPipeline=$False)]
     [String]$FileSystemObject
    )
 
