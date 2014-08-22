@@ -1,4 +1,5 @@
-Write-Verbose "$(Get-Date -format g) Creating top directory c:/opt"
+Write-Verbose "$(Get-Date -format g) Creating empty top directory c:/opt"
+Remove-Item -Recurse -Force c:\opt
 New-Item c:\opt -Type directory -Force
 Write-Verbose "$(Get-Date -format g) Unzipping PicnicBasket"
 $shell = new-object -com shell.application
