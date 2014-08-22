@@ -1,10 +1,12 @@
+Write-Verbose "Installing Ruby components"
 cinst ruby -version 1.9.3.54500
 cinst ruby.devkit.ruby193
 cinst pik
+Write-Verbose "Installing Putty and 7zip"
 cinst putty
 cinst 7zip.install
 cinst 7zip.commandline
+Write-Verbose "Installing MinGW and OpenSSH"
 cinst mingw
 cinst mingw-get
 cinst OpenSSH
-cinst carbon
