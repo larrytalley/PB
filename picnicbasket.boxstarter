@@ -1,7 +1,5 @@
 Write-Verbose "$(Get-Date -format g) Creating top directory c:/opt"
-mkdir c:/opt
-Write-Verbose "$(Get-Date -format g) Recursive rm c:/opt"
-Remove-Item -Recurse -Force c:/opt
+New-Item c:\opt -Type directory -Force
 Write-Verbose "$(Get-Date -format g) Unzipping PicnicBasket"
 $shell = new-object -com shell.application
 [Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem")
