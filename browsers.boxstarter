@@ -1,3 +1,4 @@
+Write-Verbose "Installing GoogleChrome, Firefox, Opera"
 cinst GoogleChrome
 cinst Firefox
 cinst Opera
