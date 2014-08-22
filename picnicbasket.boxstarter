@@ -212,11 +212,11 @@ PROCESS {
 
   $processHandle = (Get-Process -id $ProcessId).Handle
     
-  Write-Verbose "$(Get-Date -format g) Establishing $UserToReceiveOwnership as owner of $FileSystemObject
+  Write-Verbose "$(Get-Date -format g) Establishing $UserToReceiveOwnership as owner of $FileSystemObject"
 
   Set-LHSTokenPrivilege -Privilege SeRestorePrivilege
 
-  $UserToReceiveOwnershipSecurityPrincipal = new-object System.Security.Principal.NTAccount($args[0])
+  $UserToReceiveOwnershipSecurityPrincipal = new-object System.Security.Principal.NTAccount($UserToReceiveOwnership)
   Get-ChildItem -LiteralPath $FileSystemObject -recurse -force |
   ForEach {
     $fullpath = Get-Item -LiteralPath (Get-Item -LiteralPath $_.PSPath)
