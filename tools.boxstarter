@@ -1,3 +1,4 @@
+Write-Verbose "Installing GOW, RapidEE, Conemu, Notepad++, Git"
 cinst gow
 cinst Devbox-RapidEE
 cinst conemu
