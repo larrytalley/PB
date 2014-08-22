@@ -1,0 +1,2 @@
+Write-Verbose "$(Get-Date -format g) Establishing PATH"
+setx PATH "$env:path;C:\bin" -m
