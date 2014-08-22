@@ -102,7 +102,7 @@ Param(
         "SeUndockPrivilege", "SeUnsolicitedInputPrivilege")]
     [String]$Privilege,
 
-    [Parameter(Position=1)]
+    [Parameter(Position=1),Mandatory=$True,ValueFromPipeline=$False)]
     $ProcessId = $pid,
 
     [Switch]$Disable
@@ -195,7 +195,7 @@ Param(
     [Parameter(Position=0,Mandatory=$True,ValueFromPipeline=$False)]
     [String]$UserToReceiveOwnership,
 
-    [Parameter(Position=1)Mandatory=$True,ValueFromPipeline=$False)]
+    [Parameter(Position=1,Mandatory=$True,ValueFromPipeline=$False)]
     [String]$FileSystemObject
    )
 
