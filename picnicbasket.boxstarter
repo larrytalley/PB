@@ -230,5 +230,8 @@ PROCESS {
 
 END { Write-Verbose "Function ${CmdletName} finished." }
 
-} # end Function Set-Ownership                
+} # end Function Set-Ownership    
+
+Write-Verbose "Set-Ownership success = $(Set-Ownership('JDeveloper', 'c:\opt'))"
+
  
