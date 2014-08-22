@@ -1,7 +1,8 @@
+Write-Verbose "Installing Ruby components"
 cinst ruby -version 1.9.3.54500
 cinst ruby.devkit.ruby193
 cinst pik
-
+Write-Verbose "Installing Ruby gems"
 Start-Process "gem" -ArgumentList "install --platform=ruby nokogiri" -Wait
 Start-Process "gem" -ArgumentList "install --platform=ruby watir" -Wait
 Start-Process "gem" -ArgumentList "install --platform=ruby watir-webdriver" -Wait
