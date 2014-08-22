@@ -4,7 +4,7 @@ Write-Verbose "$(Get-Date -format g) Unzipping PicnicBasket"
 $shell = new-object -com shell.application
 [Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem")
 [System.AppDomain]::CurrentDomain.GetAssemblies()
-[System.IO.Compression.ZipFile]::ExtractToDirectory((Get-Item "c:/PicnicBasket/opt1.0.1.zip"), (Get-Item "c:/"))
+[System.IO.Compression.ZipFile]::ExtractToDirectory((Get-Item "c:\PicnicBasket\opt1.0.1.zip"), (Get-Item "c:\"))
 Write-Verbose "$(Get-Date -format g) Changing PicnicBasket ownership"
 
 function Set-LHSTokenPrivilege
@@ -166,9 +166,6 @@ $definition = @'
   }
  }
 '@
-
-
-
 } # end BEGIN
 
 PROCESS {
@@ -198,7 +195,7 @@ Param(
     [Parameter(Position=0,Mandatory=$True,ValueFromPipeline=$False,HelpMessage='User to receive ownership.')]
     [String]$UserToReceiveOwnership,
 
-    [Parameter(Position=1)]
+    [Parameter(Position=1)Mandatory=$True,ValueFromPipeline=$False,HelpMessage='Object to own.')]
     [String]$FileSystemObject
    )
 
@@ -206,11 +203,7 @@ BEGIN {
 
     Set-StrictMode -Version Latest
     ${CmdletName} = $Pscmdlet.MyInvocation.MyCommand.Name
-
-## Taken from P/Invoke.NET with minor adjustments.
-
-$definition = @'
- using Set-LHSTokenPrivilege;
+    using Set-LHSTokenPrivilege;
 
 
 } # end BEGIN
