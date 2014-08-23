@@ -1,12 +1,12 @@
-Write-Verbose "$(Get-Date -format g) Creating empty top directory c:/opt"
+Write-Verbose "$(Get-Date -format g) Creating (or emptying) top directory c:\opt"
 Remove-Item -Recurse -Force c:\opt
 New-Item c:\opt -Type directory -Force
-Write-Verbose "$(Get-Date -format g) Unzipping PicnicBasket"
+Write-Verbose "$(Get-Date -format g) Unzipping PicnicBasket to c:\opt"
 $shell = new-object -com shell.application
 [Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem")
 [System.AppDomain]::CurrentDomain.GetAssemblies()
 [System.IO.Compression.ZipFile]::ExtractToDirectory((Get-Item "c:\PicnicBasket\opt1.0.1.zip"), (Get-Item "c:\"))
-Write-Verbose "$(Get-Date -format g) Changing PicnicBasket ownership"
+Write-Verbose "$(Get-Date -format g) Changing c:\opt\** ownership"
 
 function Set-LHSTokenPrivilege
 {
@@ -204,8 +204,6 @@ BEGIN {
 
     Set-StrictMode -Version Latest
     ${CmdletName} = $Pscmdlet.MyInvocation.MyCommand.Name
-    using Set-LHSTokenPrivilege;
-
 
 } # end BEGIN
 
