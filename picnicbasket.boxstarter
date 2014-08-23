@@ -103,7 +103,7 @@ Param(
         "SeUndockPrivilege", "SeUnsolicitedInputPrivilege")]
     [String]$Privilege,
 
-    [Parameter(Position=1,Mandatory=$False)]
+    [Parameter(Position=1)]
     $ProcessId = $pid,
 
     [Switch]$Disable
