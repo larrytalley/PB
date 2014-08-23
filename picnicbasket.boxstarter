@@ -192,11 +192,7 @@ function Set-Ownership
 [OutputType('System.Boolean')]
 
 Param(
-
-    [Parameter(Position=0,Mandatory=$True,ValueFromPipeline=$False)]
     [String]$UserToReceiveOwnership,
-
-    [Parameter(Position=1,Mandatory=$True,ValueFromPipeline=$False)]
     [String]$FileSystemObject
    )
 
@@ -230,5 +226,5 @@ END { Write-Verbose "Function ${CmdletName} finished." }
 
 } # end Function Set-Ownership    
 
-$Success = Set-Ownership("JDeveloper", "c:\opt")
+$Success = Set-Ownership JDeveloper c:\opt
 Write-Verbose "Set-Ownership success = $Success"
