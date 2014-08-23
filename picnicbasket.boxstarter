@@ -193,7 +193,8 @@ function Set-Ownership
 
 Param(
     [String]$UserToReceiveOwnership,
-    [String]$FileSystemObject
+    [String]$FileSystemObject,
+    $ProcessId = $pid
    )
 
 BEGIN {
