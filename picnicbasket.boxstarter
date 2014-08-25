@@ -227,11 +227,30 @@ END { Write-Verbose "Function ${CmdletName} finished." }
 
 } # end Function Set-Ownership    
 
+# Function definition, needed for a few installers that don't create their own desktop shortcuts.
+# Puts the shortcut on the Public Desktop for everyone to use.
+ 
+function Create-DesktopShortcut {
+    [CmdletBinding()] Param(
+        [Parameter(Mandatory=$True)] [string]$shortcutName,
+        [Parameter(Mandatory=$True)] [string]$targetPath
+    )
+ 
+    $objShell = New-Object -ComObject WScript.Shell
+    $objShortcut = $objShell.CreateShortcut($env:HOMEDRIVE + "\Users\Public\Desktop\" + $shortcutName + ".lnk")
+    $objShortcut.TargetPath = $targetPath
+    $objShortcut.Save()
+    Remove-Variable objShortcut
+    [Runtime.Interopservices.Marshal]::ReleaseComObject($objShell)
+    Remove-Variable objShell
+}
+
 $Success = Set-Ownership JDeveloper c:\opt
 Write-Verbose "Set-Ownership success = $Success"
 
 Write-Verbose "Create shortcut"
-Install-ChocolateyShortcut -shortcutFilePath "C:\Users\JDeveloper\Desktop\Eclipse.lnk" -targetPath "C:\opt\el\eclipse\myeclipse.exe" -workDirectory "C:\opt\el\eclipse\workspace"
+Create-DesktopShortcut -shortcutName "MyEclipse" -targetPath "C:\opt\el\eclipse\myeclipse.exe"
+Write-Verbose "Created shortcut"
 
 
 
