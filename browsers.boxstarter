@@ -1,4 +1,5 @@
 Write-Verbose "Installing GoogleChrome, Firefox, Opera"
 cinst GoogleChrome
+Install-ChocolateyPinnedTaskBarItem "$($Boxstarter.programFiles86)\Google\Chrome\Application\chrome.exe"
 cinst Firefox
 cinst Opera
