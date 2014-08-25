@@ -230,3 +230,8 @@ END { Write-Verbose "Function ${CmdletName} finished." }
 $Success = Set-Ownership JDeveloper c:\opt
 Write-Verbose "Set-Ownership success = $Success"
 
+Write-Verbose "Create shortcut"
+Install-ChocolateyShortcut -shortcutFilePath "C:\Users\JDeveloper\Desktop\Eclipse.lnk" -targetPath "C:\opt\el\eclipse\myeclipse.exe" -workDirectory "C:\opt\el\eclipse\workspace"
+
+
+
