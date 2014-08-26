@@ -245,7 +245,7 @@ function Create-DesktopShortcut {
     Remove-Variable objShell
 }
 
-$Success = Set-Ownership JDev c:\opt
+$Success = Set-Ownership JDev 'c:\opt'
 Write-Verbose "Set-Ownership success = $Success"
 
 Write-Verbose "Create shortcut"
