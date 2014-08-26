@@ -1,7 +1,3 @@
-Enter-BoxstarterLogable
-$Boxstarter.Log="c:\boxstarter.log"
-$Boxstarter.RebootOk=$false
-$Boxstarter.SuppressLogging=$false
 $VerbosePreference = "Continue"
 Write-Verbose "Establishing system settings"
 Update-ExecutionPolicy Unrestricted
