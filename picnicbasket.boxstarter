@@ -1,4 +1,3 @@
-Enter-BoxstarterLogable
 Write-Verbose "$(Get-Date -format g) Creating (or emptying) top directory c:\opt"
 Remove-Item -Recurse -Force c:\opt
 New-Item c:\opt -Type directory -Force
