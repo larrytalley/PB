@@ -219,6 +219,7 @@ PROCESS {
     $aclobject = (Get-Item -LiteralPath $fullpath).GetAccessControl()
     $aclobject.SetOwner($UserToReceiveOwnershipSecurityPrincipal)
     set-acl -aclobject $aclobject -LiteralPath $fullpath.FullName
+    Write-Verbose "Took ownership of $fullpath.FullName"
   }
 
 } # end PROCESS
