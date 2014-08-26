@@ -2,5 +2,6 @@ $VerbosePreference = "Continue"
 Write-Verbose "Establishing system settings"
 Update-ExecutionPolicy Unrestricted
 Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
 Enable-RemoteDesktop
 $VerbosePreference = "Continue"
