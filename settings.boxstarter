@@ -1,3 +1,4 @@
+Enter-BoxstarterLogable
 $VerbosePreference = "Continue"
 Write-Verbose "Establishing system settings"
 Update-ExecutionPolicy Unrestricted
