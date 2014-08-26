@@ -1,0 +1,6 @@
+Write-Verbose "Establishing ordinary system settings"
+Update-ExecutionPolicy Restricted
+Set-ExplorerOptions -showHidenFilesFoldersDrives -showProtectedOSFiles -showFileExtensions
+Set-WindowsExplorerOptions -EnableShowHiddenFilesFoldersDrives -EnableShowProtectedOSFiles -EnableShowFileExtensions -EnableShowFullPathInTitleBar
+Enable-UAC
+Enable-RemoteDesktop
