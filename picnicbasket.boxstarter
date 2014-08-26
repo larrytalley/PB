@@ -1,6 +1,6 @@
 Write-Verbose "$(Get-Date -format g) Creating (or emptying) top directory c:\opt"
 Remove-Item -Recurse -ErrorAction continue -Force -Path c:\opt
-New-Item c:\opt -Type directory -Force
+New-Item -Path c:\opt -Type directory -Force -ErrorAction stop
 Write-Verbose "$(Get-Date -format g) Unzipping PicnicBasket to c:\opt"
 $shell = new-object -com shell.application
 [Reflection.Assembly]::LoadWithPartialName("System.IO.Compression.FileSystem")
